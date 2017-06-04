@@ -5,20 +5,25 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.oldroy.greedyman.contacts.UserContact
+import com.example.oldroy.greedyman.models.User
+import com.example.oldroy.greedyman.presenters.UserPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity(), LoginContact.View {
+class LoginActivity : AppCompatActivity(), UserContact.View {
 
 
-    private var loginPresenter: LoginContact.Presenter? = null
+    private var userPresenter: UserContact.Presenter? = null
 
-    override fun onSuccessAuth() {
+    override fun onSuccess(user: User) {
         login_progress.visibility = ProgressBar.GONE
-        startActivity(Intent(this, DashboardActivity::class.java))
+        val intent: Intent = Intent(this, DashboardActivity::class.java)
+        intent.putExtra("USER", user)
+        startActivity(intent)
         finish()
     }
 
-    override fun onErrorAuth() {
+    override fun onError() {
         login_progress.visibility = ProgressBar.GONE
         Toast.makeText(this, "Wrong password or username!", Toast.LENGTH_LONG).show()
     }
@@ -30,13 +35,13 @@ class LoginActivity : AppCompatActivity(), LoginContact.View {
             return Toast.makeText(this, "Username and password shouldn't be empty!", Toast.LENGTH_LONG).show()
         }
         login_progress.visibility = ProgressBar.VISIBLE
-        loginPresenter?.verifyAuth(username, password)
+        userPresenter?.verifyAuth(username, password)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        loginPresenter = LoginPresenter(this)
+        userPresenter = UserPresenter(this)
         button_sign_in.setOnClickListener { onSubmit() }
     }
 
