@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
@@ -30,4 +31,15 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:25.3.1'
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:design:25.3.1'
+    androidTestCompile 'org.jetbrains.spek:spek-api:1.1.2'
+    androidTestCompile 'org.jetbrains.spek:spek-junit-platform-engine:1.1.2'
+    androidTestCompile 'org.junit.platform:junit-platform-runner:1.0.0-M4'
+    androidTestCompile 'org.mockito:mockito-core:2.8.9'
+    androidTestCompile 'org.jetbrains.kotlin:kotlin-test:1.1.2-4'
+    androidTestCompile 'org.mockito:mockito-core:2.8.9'
+    compile 'com.google.firebase:firebase-core:10.2.6'
+    compile 'com.google.firebase:firebase-database:10.2.6'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
