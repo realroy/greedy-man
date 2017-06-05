@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import com.example.oldroy.greedyman.adapters.CustomPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val text_username = nav_view.getHeaderView(0).findViewById(R.id.text_username) as TextView?
         text_username?.text = "Hello, $username"
 
-        pagerAdapter = CustomPagerAdapter(supportFragmentManager)
+        pagerAdapter = CustomPagerAdapter(supportFragmentManager, friends)
         container.adapter = pagerAdapter
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
         tab_layout.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
