@@ -1,13 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
     tools:context="com.example.oldroy.greedyman.DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/text_invitation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Dashboard" />
+        android:layout_height="wrap_content"
+        android:text="New Invitation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_invitation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_up_coming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Up coming"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_up_coming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

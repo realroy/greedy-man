@@ -33,4 +33,8 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="appointment_name">Appointment name</string>
+    <string name="_09_11_2000_1_00_2_00">09/11/2000 1.00 - 2.00</string>
+    <string name="at_middle_of_nowhere">At Middle of Nowhere</string>
+    <string name="with_nobody">With nobody</string>
 </resources>
