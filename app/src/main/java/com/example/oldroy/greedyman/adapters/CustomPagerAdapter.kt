@@ -6,12 +6,12 @@ import android.support.v4.app.FragmentPagerAdapter
 import com.example.oldroy.greedyman.DashboardFragment
 import com.example.oldroy.greedyman.FriendFragment
 
-class CustomPagerAdapter(fm: FragmentManager?, val friendList: ArrayList<String>) : FragmentPagerAdapter(fm) {
+class CustomPagerAdapter(fm: FragmentManager?, val friendList: ArrayList<String>, val username: String) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         when (position) {
             0 -> return DashboardFragment()
-            2 -> return FriendFragment.newInstance(friendList)
+            2 -> return FriendFragment.newInstance(username, friendList)
             else -> return DashboardFragment()
         }
     }

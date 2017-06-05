@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val text_username = nav_view.getHeaderView(0).findViewById(R.id.text_username) as TextView?
         text_username?.text = "Hello, $username"
 
-        pagerAdapter = CustomPagerAdapter(supportFragmentManager, friends)
+        pagerAdapter = CustomPagerAdapter(supportFragmentManager, friends, username)
         container.adapter = pagerAdapter
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
         tab_layout.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
@@ -73,9 +73,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_schedule -> {
-
+                container.setCurrentItem(1, true)
             }
             R.id.nav_friend -> {
+                container.setCurrentItem(2, true)
+            }
+            R.id.nav_add_friend -> {
 
             }
         }
