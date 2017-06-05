@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:title="Dashboard"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_schedule"
+        android:title="Schedule"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_friend"
+        android:title="Friend"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Item1"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item2"
+        android:title="Item"
+        app:showAsAction="always" />
+</menu>

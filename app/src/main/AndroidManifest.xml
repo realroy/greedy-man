@@ -25,10 +25,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DashboardActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity
+            android:name=".TabTempleteActivity"
+            android:label="@string/title_activity_tab_templete"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

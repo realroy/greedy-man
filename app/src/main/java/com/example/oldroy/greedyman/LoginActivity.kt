@@ -17,8 +17,11 @@ class LoginActivity : AppCompatActivity(), UserContact.View {
 
     override fun onSuccess(user: User) {
         login_progress.visibility = ProgressBar.GONE
-        val intent: Intent = Intent(this, DashboardActivity::class.java)
-        intent.putExtra("USER", user)
+        val intent: Intent = Intent(this, MainActivity::class.java)
+        intent.run {
+            putExtra("USERNAME", user.name)
+            putExtra("FRIENDS", user.friends)
+        }
         startActivity(intent)
         finish()
     }
@@ -43,6 +46,7 @@ class LoginActivity : AppCompatActivity(), UserContact.View {
         setContentView(R.layout.activity_login)
         userPresenter = UserPresenter(this)
         button_sign_in.setOnClickListener { onSubmit() }
+        button_sign_up.setOnClickListener { startActivity(Intent(this, SignUpActivity::class.java)) }
     }
 
 }

@@ -1,8 +1,14 @@
 package com.example.oldroy.greedyman.models
 
-import java.io.Serializable
-
-class User : Serializable {
-    var name: String = ""
-    var password: String = ""
+class User {
+    var name = ""
+    var password = ""
+    var friends = ArrayList<String>()
+    override fun toString(): String {
+        return "User = {" +
+                "\tname: $name," +
+                "\tpassword: $password," +
+                "\tfriends: $friends" +
+                "}"
+    }
 }
